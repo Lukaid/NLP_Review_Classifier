@@ -76,7 +76,6 @@
     5. ./tokenize.sh tok전_파일명 tok후_파일명
 
 
-
 ### 5. Modeling
 
 1. Sentimental Classifier Using Pytorch (LSTM & CNN)
