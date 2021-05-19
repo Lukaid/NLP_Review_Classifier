@@ -1,13 +1,18 @@
 # NLP_Review_Classifier
 
-Source Code From https://github.com/kh-kim/simple-ntc in Fastcampus
+<a href = "https://google.com" title = "git repository로 이동" target="_blank">Source Code From Fastcampus</a>
 
 ## 2021년 춘계공동학술대회 발표 _ 대한산업공학회
+
+---
 
 ### 연구 제목 : 딥러닝 기반 텍스트 분류 모델을 활용한 국내 이커머스 사용자 리뷰 분석
 
 #### 연구 설명
+
 - 본 연구는 쿠팡, SSG닷컴, 롯데ON의 App리뷰를 비교 분석하여 각 어플의 고객만족도를 조사한다. 
+
+<img src ="https://pytorch.org/assets/images/logo.svg" width = "300" title = "pytorch" alt = "Pytorch">
 
 - 연구 환경
     - Python Framework인 Pytorch를 활용하여 연구를 진행
