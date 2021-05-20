@@ -52,7 +52,8 @@
 
 ### 2. Labeling
 
-- Sentiment Classifier Modeling에 필요한 Corpus만 Labeling진행
+- Sentiment Classifier Modeling에 필요한 Corpus에 Labeling
+- App Review에 대해서 Sentiment와 Topic에 대한 Test Data Set에 Lebeling
 
 
 ### 3. Cleaning
@@ -62,7 +63,10 @@
 - 진행 순서
     1. refine.py / refine.regex.txt 파일을 Colab에 업로드
     2. !bash실행
-    3. python refine.py refine.regex.txt 1 < refine전_파일명 > refine후_파일명
+    3. 아래 코드 입력
+    ```bash
+    $ python refine.py refine.regex.txt 1 < refine전_파일명 > refine후_파일명
+    ```
 
 
 ### 4. Tokenization
@@ -73,7 +77,10 @@
     2. tokenize.sh 파일을 Colab에 업로드
     3. !bash실행
     4. chmod 555 ./tokenize.sh 실행 (권한 부여)
-    5. ./tokenize.sh tok전_파일명 tok후_파일명
+    5. 아래 코드 입력
+    ```bash
+    $ ./tokenize.sh tok전_파일명 tok후_파일명
+    ```
 
 
 ### 5. Modeling
