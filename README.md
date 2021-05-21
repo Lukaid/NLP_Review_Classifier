@@ -30,7 +30,7 @@
     2. Labeling
 
     3. Cleaning
-   
+
     4. Tokenization
 
     5. Modeling
