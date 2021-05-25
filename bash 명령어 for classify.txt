@@ -1,0 +1,40 @@
+bash 명령어
+
+cut -f2 data/review.sorted.uniq.refined.tok.shuf.test.tsv | python classify.py --model_fn models_/review_cnn2_4_bs128_epochs_20.pth --gpu_id -1 > predict_review_cnn2_4_bs128_epochs_20.tsv
+
+cut -f2 data/review.sorted.uniq.refined.tok.shuf.test.tsv | python classify.py --model_fn models_/review_rnn_cnn3_8.pth --gpu_id -1 > predict_review_rnn_cnn3_8.tsv
+
+cut -f2 data/review.sorted.uniq.refined.tok.shuf.test.tsv | python classify.py --model_fn models_/review_cnn_3_8_bs24.pth --gpu_id -1 > predict_review_cnn_3_8_bs24.tsv
+
+cut -f2 data/review.sorted.uniq.refined.tok.shuf.test.tsv | python classify.py --model_fn models_/review_rnn_bs24.pth --gpu_id -1 > predict_review_rnn_bs24.tsv
+
+cut -f2 data/review.sorted.uniq.refined.tok.shuf.test.tsv | python classify.py --model_fn models_/review_cnn2_4_bs128_f_200.pth --gpu_id -1 > review_cnn2_4_bs128_f_200.tsv
+
+cut -f2 /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/data/review.sorted.uniq.refined.tok.shuf.test.tsv | python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_4_bs128_f_256.pth --gpu_id 0 > review_cnn2_4_bs128_f_2256.tsv
+
+cut -f2 /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/data/review.sorted.uniq.refined.tok.shuf.test.tsv | python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_4_bs128_f_128.pth --gpu_id 0 > review_cnn2_4_bs128_f_128.tsv
+
+cut -f2 /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/data/review.sorted.uniq.refined.tok.shuf.test.tsv | python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_5_bs128_f_256.pth --gpu_id 0 > predict_review_cnn2_5_bs128_f_256.tsv
+
+/content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/data/google_coupang_test.tsv | python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_5_bs128_f_256.pth --gpu_id 0 > google_coupang_review_cnn2_5_bs128_f_256.tsv
+
+/content/google_coupang_test.refined.tok.tsv | python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_5_bs128_f_256.pth --gpu_id 0 > google_coupang_review_cnn2_5_bs128_f_256.tsv
+
+
+cut -f2 data/google_coupang_test.refined.tok.tsv | python classify.py --model_fn models_/review_cnn2_5_bs128_f_256.pth --gpu_id -1 > google_coupang_review_cnn2_5_bs128_f_256.tsv
+
+
+
+
+data/review.sorted.uniq.refined.tok.shuf.test.tsv | python classify.py --model_fn models_/~~~ --gpu_id -1 | > mydata.txt
+
+
+
+
+python train.py --model_fn .models_/review_cnn2_4_bs128_epochs_20.pth --train_fn .sample_data/review.sorted.uniq.refined.tok.shuf.train.balanced.tsv --gpu_id 0 --batch_size 128 --n_epochs 20 --window_sizes 2 3 4 --n_filters 100 100 100
+
+python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/train.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_4_bs128.pth --train_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/data/review.sorted.uniq.refined.tok.shuf.train.balanced.tsv --gpu_id 0 --rnn --batch_size 128 --cnn --window_sizes 2 3 4 --n_filters 200 200 200
+
+python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/train.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_5_bs128_f_256.pth --train_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/data/review.sorted.uniq.refined.tok.shuf.train.balanced.tsv --gpu_id 0 --rnn --batch_size 128 --cnn --window_sizes 2 3 4 5 --n_filters 256 256 256 256 --n_epochs 20
+
+python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/train.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_4_bs128_f_128.pth --train_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/data/review.sorted.uniq.refined.tok.shuf.train.balanced.tsv --gpu_id 0 --rnn --batch_size 128 --cnn --window_sizes 2 3 4 --n_filters 128 128 128

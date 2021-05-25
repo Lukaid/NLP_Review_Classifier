@@ -95,3 +95,16 @@ https://frhyme.github.io/nlp/fasttext_pretrained_wiki/
 
 
 https://wikidocs.net/33520
+
+
+
+
+
+
+
+
+
+
+
+
+python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.py /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.regex.txt 1 < /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/1_Data_Crawling/Digital_Transformation/Total_Review_For_Fasttext.tsv > /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/1_Data_Crawling/Digital_Transformation/Total_Review_For_Fasttext.clean.tsv
