@@ -38,3 +38,57 @@ python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-maste
 python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/train.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_5_bs128_f_256.pth --train_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/data/review.sorted.uniq.refined.tok.shuf.train.balanced.tsv --gpu_id 0 --rnn --batch_size 128 --cnn --window_sizes 2 3 4 5 --n_filters 256 256 256 256 --n_epochs 20
 
 python /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/train.py --model_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/models_/review_cnn2_4_bs128_f_128.pth --train_fn /content/drive/MyDrive/Colab_Notebooks/prac_data_science/simple-ntc-master/data/review.sorted.uniq.refined.tok.shuf.train.balanced.tsv --gpu_id 0 --rnn --batch_size 128 --cnn --window_sizes 2 3 4 --n_filters 128 128 128
+
+
+
+
+
+
+
+
+
+
+
+--cleaning
+
+python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.py /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.regex.txt 1 < /content/LotteOn_After_DT.tsv > /content/LotteOn_After_DT.clean.tsv
+
+python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.py /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.regex.txt 1 < /content/LotteOn_Before_DT.tsv > /content/LotteOn_Before_DT.clean.tsv
+
+python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.py /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.regex.txt 1 < /content/SSG_After_DT.tsv > /content/SSG_After_DT.clean.tsv
+
+python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.py /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.regex.txt 1 < /content/SSG_Before_DT.tsv > /content/SSG_Before_DT.clean.tsv
+
+python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.py /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/3_Cleaning/refine.regex.txt 1 < /content/coupang_Total.tsv > /content/coupang_Total.clean.tsv
+
+
+--tokenization
+
+/content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/4_Tokenization/tokenize.sh /content/LotteOn_After_DT.clean.tsv /content/LotteOn_After_DT.clean.tok.tsv
+
+/content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/4_Tokenization/tokenize.sh /content/LotteOn_Before_DT.clean.tsv /content/LotteOn_Before_DT.clean.tok.tsv
+
+/content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/4_Tokenization/tokenize.sh /content/SSG_After_DT.clean.tsv /content/SSG_After_DT.clean.tok.tsv
+
+/content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/4_Tokenization/tokenize.sh /content/SSG_Before_DT.clean.tsv /content/SSG_Before_DT.clean.tok.tsv
+
+/content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/4_Tokenization/tokenize.sh /content/coupang_Total.clean.tsv /content/coupang_Total.clean.tok.tsv
+
+
+--classify
+
+cut -f2 /content/LotteOn_After_DT.clean.tok.tsv | python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/5_1_Modeling_Sentimental/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/6_Output_Analysis/review_cnn2_5_bs128_f_256.pth --gpu_id -1 > /content/pred_LotteOn_After_DT.tsv
+
+cut -f2 /content/LotteOn_Before_DT.clean.tok.tsv | python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/5_1_Modeling_Sentimental/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/6_Output_Analysis/review_cnn2_5_bs128_f_256.pth --gpu_id -1 > /content/pred_LotteOn_Before_DT.tsv
+
+cut -f2 /content/SSG_After_DT.clean.tok.tsv | python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/5_1_Modeling_Sentimental/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/6_Output_Analysis/review_cnn2_5_bs128_f_256.pth --gpu_id -1 > /content/pred_SSG_After_DT.tsv
+
+cut -f2 /content/SSG_Before_DT.clean.tok.tsv | python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/5_1_Modeling_Sentimental/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/6_Output_Analysis/review_cnn2_5_bs128_f_256.pth --gpu_id -1 > /content/pred_SSG_Before_DT.tsv
+
+cut -f2 /content/coupang_Total.clean.tok.tsv | python /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/5_1_Modeling_Sentimental/classify.py --model_fn /content/drive/MyDrive/Colab_Notebooks/NLP_Review_Classifier/6_Output_Analysis/review_cnn2_5_bs128_f_256.pth --gpu_id -1 > /content/pred_coupang_Total.tsv
+
+
+
+
+
+
