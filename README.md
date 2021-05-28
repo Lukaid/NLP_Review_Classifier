@@ -35,7 +35,9 @@
 
     5. Modeling
 
-    6. Output Analysis
+    6. Predicting
+
+    7. Output Analysis
 
 ## 연구 과정
 
