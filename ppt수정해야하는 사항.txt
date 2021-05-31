@@ -1,0 +1,7 @@
+6페이지와 7페이지의 For Evaluation이라는 워딩이... 적절하지 않은 것 같음.
+쇼핑몰의 리뷰를 평가하는 것은 맞지만... 뭔가 test data set 느낌이 남...
+
+13페이지의 Hyper Parameter의 경우, LSTM은 연구자의 PC상황, 기존연구의 Hyper Parameter참고하여 고정 & CNN의 경우 여러번 구성했으나 큰차이 X
+filter의 개수를 2의 제곱으로 하면 좋다는 풍문을 들었지만 큰차이 X
+
+14페이지에 topic modeling은... 수정이 많이 필요해 보인다..
